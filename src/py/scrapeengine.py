@@ -37,7 +37,7 @@ from System.Threading import Thread, ThreadStart
 # =============================================================================
 class ScrapeEngine(object):
    '''
-   This class contains the main processing loop for the Comic Vine Scraper
+   This class contains the main processing loop for the Comic Rack Scraper
    script.   Once initialized, you pass a collection of books to the 
    ScrapeEngine via the 'scrape' method.
    

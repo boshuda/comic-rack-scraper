@@ -15,7 +15,7 @@ from persistentform import PersistentForm
 #==============================================================================
 class CVForm(PersistentForm):
    '''
-   This class is the direct superclass of all Comic Vine Scraper forms.
+   This class is the direct superclass of all Comic Rack Scraper forms.
    It contains functionality and default configuration that is common to
    all forms in this application.
    '''

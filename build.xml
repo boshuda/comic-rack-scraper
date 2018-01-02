@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding = 'utf-8'?>  
 <!DOCTYPE project>
 
-<project name="Comic Vine Scraper" default="dist" basedir="." >
+<project name="Comic Rack Scraper" default="dist" basedir="." >
    <description>
-      A master build file for the 'Comic Vine Scraper' project.
+      A master build file for the 'Comic Rack Scraper' project.
    </description>
    
    <!-- Global Properties -->
@@ -46,7 +46,7 @@
    	   value="${Version}" />
    		
    	<!-- zip up the zip dir, thus making a valid ComicRack script package -->
-   	<zip destfile="${build.dir}/ComicVineScraper-${Version}.crplugin"
+   	<zip destfile="${build.dir}/ComicRackScraper-${Version}.crplugin"
    	   basedir="${zip.dir}" whenempty="fail"/>
    	
    	<!-- the zip directory isn't needed anymore, so remove it -->

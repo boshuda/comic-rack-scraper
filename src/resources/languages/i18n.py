@@ -133,7 +133,7 @@ class __I18n(object):
       # <?xml version="1.0" encoding="UTF-8"?>
       # <TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
       #        xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
-      #        Name="Script.ComicVineScraper" CultureName="en">
+      #        Name="Script.ComicRackScraper" CultureName="en">
       #    <Texts>
       #       <Text Key="Button1" Text="Ok" Comment="Ok"/>
       #       <Text Key="Button2" Text="Cancel" Comment="Cancel"/>
@@ -177,6 +177,6 @@ class __I18n(object):
          raise Exception("cannot retrieve string for empty key")
       if key_s in self.__default_strings:
          return self.__comicrack.Localize(
-            "Script.ComicVineScraper", key_s, self.__default_strings[key_s] )
+            "Script.ComicRackScraper", key_s, self.__default_strings[key_s] )
       else:
          raise Exception("unrecognized i18n key: " + key_s)

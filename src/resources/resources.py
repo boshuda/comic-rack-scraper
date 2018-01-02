@@ -35,7 +35,7 @@ class Resources(object):
    I18N_DEFAULTS_FILE = None
    
    # the XML file (in each language pack) for our localized strings
-   I18N_XML_ENTRY = 'Script.ComicVineScraper.xml'
+   I18N_XML_ENTRY = 'Script.ComicRackScraper.xml'
    
    # the apps version number/string
    SCRIPT_VERSION = "!DEV!"  # do NOT change! build process relies on this!
@@ -43,7 +43,7 @@ class Resources(object):
       SCRIPT_VERSION = "0.0.0"
    
    # the full name of the app, including version string
-   SCRIPT_FULLNAME = 'Comic Vine Scraper - v' + SCRIPT_VERSION
+   SCRIPT_FULLNAME = 'Comic Rack Scraper - v' + SCRIPT_VERSION
 
    #==============================================================================
    @classmethod 
@@ -95,7 +95,7 @@ class Resources(object):
       script_dir = Directory.GetParent(__file__).FullName
       profile_dir = Environment.GetFolderPath(
          Environment.SpecialFolder.ApplicationData) + \
-         r"\Comic Vine Scraper"
+         r"\Comic Rack Scraper"
       
       # set the standard locations for settings files 
       cls.SETTINGS_FILE = profile_dir + r'\settings.dat'

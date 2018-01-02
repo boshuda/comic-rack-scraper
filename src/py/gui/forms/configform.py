@@ -175,7 +175,7 @@ class ConfigForm(CVForm):
       tabcontrol.Location = Point(10, 15)
       tabcontrol.Size = Size(395, 302)
       
-      tabcontrol.Controls.Add( self.__build_comicvinetab() )
+      tabcontrol.Controls.Add( self.__build_comicracktab() )
       tabcontrol.Controls.Add( self.__build_detailstab() )
       tabcontrol.Controls.Add( self.__build_behaviourtab() )
       tabcontrol.Controls.Add( self.__build_datatab() )
@@ -185,12 +185,12 @@ class ConfigForm(CVForm):
 
    
    # ==========================================================================
-   def __build_comicvinetab(self):
-      ''' builds and returns the "ComicVine" Tab for the TabControl '''
+   def __build_comicracktab(self):
+      ''' builds and returns the "ComicRack" Tab for the TabControl '''
       
       tabpage = TabPage()
       tabpage.Text = i18n.get("ConfigFormComicVineTab")
-      tabpage.Name = "comicvine"
+      tabpage.Name = "comicrack"
       
       # 1. --- a description label for this tabpage
       label = Label()
@@ -529,7 +529,7 @@ class ConfigForm(CVForm):
          for tab in self.__tabcontrol.Controls.Find("details", False):
             self.__tabcontrol.SelectedTab = tab
       else:
-         for tab in self.__tabcontrol.Controls.Find("comicvine", False):
+         for tab in self.__tabcontrol.Controls.Find("comicrack", False):
             self.__tabcontrol.SelectedTab = tab
       
       
