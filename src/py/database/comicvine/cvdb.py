@@ -111,7 +111,6 @@ def _check_magic_file(path_s):
       
    if file_s and not series_ref:
       log.debug("ignoring bad cvinfo file: ", sstr(file_s))
-
    return series_ref # may be None!
 
 
@@ -666,6 +665,7 @@ def __issue_parse_summary(issue, dom):
       summary_s = summary_s.replace(r'&gt;', '>')
       summary_s = LIST_OF_COVERS.sub('', summary_s);
       issue.summary_s = summary_s.strip()
+      
       
 #===========================================================================         
 def __issue_parse_roles(issue, dom):

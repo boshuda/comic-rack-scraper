@@ -185,7 +185,7 @@ class ComicForm(CVForm):
       'num_remaining' -> the # of books left to scrape (including current one) 
       '''
 
-      # 1. obtain a nice filename string to put into out Label    
+      # 1. obtain a nice filename string to put into our Label    
       book_name = Path.GetFileName(book.path_s.strip()) # path_s is never None
       fileless = book_name == ""
       if fileless:
