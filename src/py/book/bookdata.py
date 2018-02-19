@@ -52,6 +52,7 @@ class BookData(object):
       self.__page_count_n = 0
       self.__issue_key_s = ""
       self.__series_key_s = ""
+      self.__scraped_time_s = ""
       
       self.__updated_properties = BookData.all_properties();
       self.dont_update("page_count_n")
@@ -494,4 +495,12 @@ class BookData(object):
    series_key_s = property( lambda self : self.__series_key_s, 
       __set_series_key_s, __set_series_key_s,
       "The db Series Key object for this book.  Not None, may be empty.")   
-      
+   
+   #===========================================================================
+   def __set_scraped_time_s(self, scraped_time_s = None):
+      self.__scraped_time_s = BookData.blank("scraped_time_s") \
+         if scraped_time_s is None else sstr(scraped_time_s).strip()
+         
+   scraped_time_s = property( lambda self : self.__scraped_time_s,
+      __set_scraped_time_s, __set_scraped_time_s,
+      "The db last time book was scraped.  Not None, may be empty.")

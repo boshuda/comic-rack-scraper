@@ -13,6 +13,7 @@ import db
 import log
 import re
 import utils
+from datetime import datetime
 
 clr.AddReference('System')
 
@@ -22,6 +23,7 @@ class PluginBookData(BookData):
    
    __ISSUE_KEY = "comicvine_issue"
    __SERIES_KEY = "comicvine_volume"
+   __SCRAPED_TIME = "scraped_time"
    
    #===========================================================================   
    def __init__(self, crbook, scraper):
@@ -73,6 +75,7 @@ class PluginBookData(BookData):
       self.page_count_n = crbook.PageCount
       self.issue_key_s = crbook.GetCustomValue(PluginBookData.__ISSUE_KEY)
       self.series_key_s = crbook.GetCustomValue(PluginBookData.__SERIES_KEY)
+      self.scraped_time_s = crbook.GetCustomValue(PluginBookData.__SCRAPED_TIME)
       self.__crbook = crbook;
       self.__scraper = scraper;
                                     
@@ -227,7 +230,11 @@ class PluginBookData(BookData):
          self.__crbook.SetCustomValue(
             PluginBookData.__SERIES_KEY, sstr(self.series_key_s))
          ok_to_update.remove("series_key_s")
-         
+
+      if "scraped_time_s" in ok_to_update:
+         self.__crbook.SetCustomValue(
+            PluginBookData.__SCRAPED_TIME, sstr(datetime.now().isoformat(' ')))
+         ok_to_update.remove("scraped_time_s")
          
       # dates are a little special.  any element in the data could be blank
       # (missing), and we only update the released date if NONE of the 
