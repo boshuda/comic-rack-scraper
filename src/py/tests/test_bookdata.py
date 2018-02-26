@@ -1,5 +1,5 @@
 '''
-This module contains all unittests for the fnameparser module.
+This module contains all unittests for the bookdata module.
 
 Created on Jan 5, 2012
 @author: cbanack
@@ -395,4 +395,16 @@ class TestBookData(TestCase):
       book.series_key_s = "9393"
       self.assertEquals(book.series_key_s, "9393")
       del book.series_key_s
+      self.assertEquals(book.series_key_s, BookData.blank("series_key_s"))
+      
+   # --------------------------------------------------------------------------
+   def test_last_scraped_time_s(self):
+      ''' Checks to see if BookData's last_scraped_time_s property works. '''
+      from System import DateTime
+      book = BookData()
+      self.assertEquals(book.series_key_s, BookData.blank("scraped_time_s"))
+      scraped_time = DateTime.UtcNow.ToString("o")
+      book.scraped_time_s = scraped_time
+      self.assertEquals(book.scraped_time_s, scraped_time)
+      del book.scraped_time_s
       self.assertEquals(book.series_key_s, BookData.blank("series_key_s"))

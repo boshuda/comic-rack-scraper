@@ -13,7 +13,6 @@ import db
 import log
 import re
 import utils
-from datetime import datetime
 
 clr.AddReference('System')
 
@@ -233,7 +232,7 @@ class PluginBookData(BookData):
 
       if "scraped_time_s" in ok_to_update:
          self.__crbook.SetCustomValue(
-            PluginBookData.__SCRAPED_TIME, sstr(datetime.now().isoformat(' ')))
+            PluginBookData.__SCRAPED_TIME, DateTime.UtcNow.ToString("o"))
          ok_to_update.remove("scraped_time_s")
          
       # dates are a little special.  any element in the data could be blank
